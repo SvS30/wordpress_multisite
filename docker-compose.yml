@@ -1,0 +1,38 @@
+version: "3"
+services: 
+  db: 
+    image: mysql:8.0
+    container_name: wp-mysql
+    restart: always
+    environment: 
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_ROOT_PASSWORD=securepwd
+    expose:
+      - "3306"
+    volumes: 
+      - db:/var/lib/mysql
+  wp-multi: 
+    image: wp-multi:0.0.13
+    container_name: wp-multi
+    restart: always
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    links: 
+      - db
+    depends_on: 
+      - db
+    ports: 
+      - "80:80"
+    environment: 
+      - WORDPRESS_DEBUG=true
+      - WORDPRESS_DB_HOST=db:3306
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=securepwd
+      - WORDPRESS_DB_NAME=wordpress
+      - WORDPRESS_DB_PREFIX=wp_
+    volumes: 
+      - data:/var/www/html:rw
+volumes: 
+  data:
+  db:
