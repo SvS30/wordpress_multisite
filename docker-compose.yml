@@ -11,8 +11,10 @@ services:
       - "3306"
     volumes: 
       - db:/var/lib/mysql
+    cap_add:
+      - SYS_NICE
   wp-multi: 
-    image: wp-multi:0.0.13
+    image: wp-multi:1.0.14
     container_name: wp-multi
     restart: always
     build: 
