@@ -6,7 +6,9 @@ Solución para levantar una instancia de [*Wordpress Multisite*](https://kinsta.
 
  1. Descargar este repo.
  2. Correr `docker-compose up -d`.
+
 	2.1. Esto demorara unos minutos (si es la primera vez que lo ejecuta), ya que esto creará los servicios y la conexión de Wordpress y MySQL.
+
 	2.2. Puede revisar si todo está listo, ejecutando: `docker logs -f wp-mysql`, esperando que su salida sea algo como esto: `/usr/sbin/mysqld: ready for connections.`
  3. Ingresar a la **IP/wordpress** del equipo y realizar instalación normal de Wordpress.
 
