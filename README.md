@@ -27,5 +27,5 @@ Esto configura los archivos de configuración requeridos y solo tendrá que hace
 ### Contribuciones
 Cualquier contribución es bienvenida, simplemente forkeá este repo y haz un PR. :+1:
 
-### Sugerencias de temas
+### Sugerencias/Correción
 Cree un nuevo Github Issue si desea ayudar a mejorar esta herramienta, gracias.
