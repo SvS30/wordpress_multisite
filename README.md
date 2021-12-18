@@ -17,7 +17,12 @@ Solución para levantar una instancia de [*Wordpress Multisite*](https://kinsta.
 - Verá una pantalla que le preguntará cómo desea que se configure su red, utilizando subdominios o subdirectorios (si está corriendo **en local**, solo permitirá la instalación por **subdirectorios**).
 - Introduzca el *título* y la *dirección de correo electrónico* del **administrador de red** en los campos correspondientes y haga clic en el botón **Instalar.**
 ___
-Ya que se haya configurado la red, deberá ejecutar `sh overwrite.sh`. Esto configura los archivos de configuración requeridos y solo tendrá que hacer login de nuevo.
+Como ultimo paso de la instalación:
+- Deberá cambiar la variable [`DOMAIN_CURRENT_SITE`](https://github.com/SvS30/wordpress_multisite/blob/master/overwrite.sh#L5) en `overwrite.sh` por el dominio que vaya a utilizar.
+- De igual forma, debera modificar la variable [`SUBDOMAIN_INSTALL`](https://github.com/SvS30/wordpress_multisite/blob/master/overwrite.sh#L4) en `overwrite.sh` si hará una instalación por *subdominios*.
+
+Ya que se haya configurado la red y `overwrite.sh`, deberá ejecutar `sh overwrite.sh`.
+Esto configura los archivos de configuración requeridos y solo tendrá que hacer **login de nuevo**.
 
 ### Contribuciones
 Cualquier contribución es bienvenida, simplemente forkeá este repo y haz un PR. :+1:
